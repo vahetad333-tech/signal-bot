@@ -1,6 +1,6 @@
 console.log("🚀 Signal bot started");
 
-// 📊 pairs (crypto + forex + OTC)
+// 📊 pairs
 const pairs = [
   "BTC/USDT",
   "ETH/USDT",
@@ -24,7 +24,7 @@ function getSignal(price, ema5, ema13, rsi) {
   return "⚪ NO SIGNAL";
 }
 
-// 🔥 fake data generator (հետո կփոխենք real API-ով)
+// 🔥 fake data
 function generateData() {
   return {
     price: 100,
@@ -34,7 +34,7 @@ function generateData() {
   };
 }
 
-// 📡 run signals
+// 📡 signals
 pairs.forEach(pair => {
   const data = generateData();
   const signal = getSignal(data.price, data.ema5, data.ema13, data.rsi);
