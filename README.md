@@ -14,4 +14,4 @@ function getSignal(price: number, ema5: number, ema13: number, rsi: number) {
 }
 
 // test example
-console.log(getSignal(100, 98, 95, 35));
+console.log(getSignal(100, 98, 95, 35));BOT_TOKEN = Telegram token8965524087:AAEg-dxcFy06op5HFg7W_0K9Yf2SFlL2Re8
