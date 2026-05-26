@@ -1,7 +1,18 @@
-console.log("Signal bot started");
+console.log("🚀 Signal bot started");
 
-// simple signal logic
-function getSignal(price: number, ema5: number, ema13: number, rsi: number) {
+// 📊 pairs (crypto + forex + OTC)
+const pairs = [
+  "BTC/USDT",
+  "ETH/USDT",
+  "EUR/USD",
+  "GBP/USD",
+  "USD/JPY",
+  "BTC/USDT OTC",
+  "EUR/USD OTC"
+];
+
+// 📈 signal logic
+function getSignal(price, ema5, ema13, rsi) {
   if (rsi < 40 && price > ema5 && ema5 > ema13) {
     return "🟢 BUY";
   }
@@ -13,5 +24,20 @@ function getSignal(price: number, ema5: number, ema13: number, rsi: number) {
   return "⚪ NO SIGNAL";
 }
 
-// test example
-console.log(getSignal(100, 98, 95, 35));BOT_TOKEN = Telegram token8965524087:AAEg-dxcFy06op5HFg7W_0K9Yf2SFlL2Re8
+// 🔥 fake data generator (հետո կփոխենք real API-ով)
+function generateData() {
+  return {
+    price: 100,
+    ema5: 98,
+    ema13: 95,
+    rsi: Math.floor(Math.random() * 100)
+  };
+}
+
+// 📡 run signals
+pairs.forEach(pair => {
+  const data = generateData();
+  const signal = getSignal(data.price, data.ema5, data.ema13, data.rsi);
+
+  console.log(`${pair} → RSI:${data.rsi} → ${signal}`);
+});
